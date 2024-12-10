@@ -3,11 +3,10 @@ import React, { useCallback } from 'react'
 import { useRouter } from "next/navigation";
 import { Button } from '@mui/material';
 
-const layout = ({children}) => {
+function Layout ({children}) {
 
 
   const router = useRouter();
-
   const gotodashboard = useCallback(()=>router.replace("/main/dashboard"));
   const gotocontact = useCallback(()=>router.replace("/main/contact"));
   
@@ -24,7 +23,7 @@ const layout = ({children}) => {
         <div>{children}</div>
         <div className='w-full flex flex-row items-center justify-center bg-[#bec4c4]'>
         <div><h1 className='text-xl font-bold'>For such interactive webpages</h1></div>
-        <div  className='ml-5'><Button variant='contained' sx={{ color: 'white', backgroundColor: '#8d9191' }} onClick={gotocontact}>Click Here</Button> </div>
+        <div  className='ml-5'><Button onClick={gotocontact}>Click Here</Button> </div>
         </div>
         </div> 
 
@@ -33,5 +32,5 @@ const layout = ({children}) => {
   )
 }
 
-export default layout
+export default Layout
 

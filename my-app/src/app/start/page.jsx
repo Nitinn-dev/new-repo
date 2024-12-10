@@ -3,7 +3,7 @@ import { Button } from '@mui/material'
 import { useRouter } from 'next/navigation';
 import React, { useCallback } from 'react'
 
-const start = () => {
+function Start () {
   const router = useRouter();
   const gotodashboard = useCallback(()=>router.replace("/main/dashboard"));
   return (
@@ -19,4 +19,4 @@ const start = () => {
   )
 }
 
-export default start
+export default Start
